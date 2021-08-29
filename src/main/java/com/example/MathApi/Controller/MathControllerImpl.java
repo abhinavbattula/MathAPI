@@ -16,6 +16,13 @@ import com.example.MathApi.pojo.Numbers;
 @Component
 public class MathControllerImpl implements IMathController {
 
+    /**
+     * <p>
+     * This method takes Numbers object which contains the numbers array and quantifier
+     * @param quantifier
+     * @param numbers
+     * @returns minimum numbers array which is equal to given quantifier
+     * **/
     public ResponseEntity minimumNumbers(@PathVariable int quantifier, @RequestBody Numbers numbers) {
 
         int[] elements = numbers.getListOfNumbers();
@@ -34,6 +41,13 @@ public class MathControllerImpl implements IMathController {
         return getArrayList(quantifier, elements, maxHeap);
     }
 
+    /**
+     * <p>
+     * This method takes numbers object which contains the Numbers array and quantifier
+     * @param quantifier
+     * @param numbers
+     * @returns maximun numbers array which is equal to given quantifier
+     * **/
     public ResponseEntity maximumNumbers(@PathVariable int quantifier, @RequestBody Numbers numbers) {
 
         int[] elements = numbers.getListOfNumbers();
@@ -51,8 +65,13 @@ public class MathControllerImpl implements IMathController {
 
         return getArrayList(quantifier, elements, minHeap);
     }
-
-    public Integer avarageOfNumbers(@RequestBody Numbers numbers) {
+    /**
+     * <p>
+     * This method takes numbers object which contains the numbers array
+     * @param numbers
+     * @returns average number of the array
+     * **/
+    public Integer averageOfNumbers(@RequestBody Numbers numbers) {
 
         int[] elements = numbers.getListOfNumbers();
         int sum = 0;
@@ -64,6 +83,12 @@ public class MathControllerImpl implements IMathController {
         return sum / elements.length;
     }
 
+    /**
+     * <p>
+     * This method takes numbers object which contains the numbers array
+     * @param numbers
+     * @returns median of the given array
+     * **/
     public Double medianOfNumbers(@RequestBody Numbers numbers) {
 
         int[] elements = numbers.getListOfNumbers();
@@ -78,6 +103,13 @@ public class MathControllerImpl implements IMathController {
         return (double) ((elements[(medianIndex - 1) / 2] + elements[medianIndex / 2]) / 2.0);
     }
 
+    /**
+     * <p>
+     * This method takes Numbers object which contains the numbers array and quantifier
+     * @param quantifier
+     * @param numbers
+     * @returns percentile based on the given quantifier
+     * **/
     public ResponseEntity percentileOfNumbers(@PathVariable int quantifier, @RequestBody Numbers numbers) {
 
         int[] elements = numbers.getListOfNumbers();

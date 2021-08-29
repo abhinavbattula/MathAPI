@@ -84,7 +84,7 @@ public class MathControllerImplTest {
 		Numbers numbers = new Numbers();
 		int[] minNumsArray = {3,4,2,44,23,24,33,545};
 		numbers.setListOfNumbers(minNumsArray);
-		int minNumbers = mathController.avarageOfNumbers(numbers);
+		int minNumbers = mathController.averageOfNumbers(numbers);
 
 		Assert.assertNotNull( minNumbers);
 	}
